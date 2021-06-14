@@ -5,7 +5,7 @@ export default function Basket(props) {
   const itemsPrice = cartItems.reduce((a, b) => a + b.price * b.qty, 0)
   const taxPrice = itemsPrice * 0.14;
   const shippingPrice = itemsPrice > 2000 ? 0 : 15;
-  const total = itemsPrice + taxPrice + shippingPrice;
+  const totalPrice = itemsPrice + taxPrice + shippingPrice;
   return (
     <aside className="block col-1">
       <h2>Cart item</h2>
@@ -49,7 +49,7 @@ export default function Basket(props) {
               <strong>Total Price</strong>
             </div>
             <div className="col-2 text-right">
-              <strong>${total.toFixed(2)}</strong>
+              <strong>${totalPrice.toFixed(2)}</strong>
             </div>
           </div>
           <hr/>
